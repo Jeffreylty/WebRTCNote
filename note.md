@@ -1,39 +1,41 @@
-ICE (Interactive Connectivity Establishment):
+WebRTC（Web实时通信）是一套协议、方法和API，允许通过网络进行实时通信。WebRTC涵盖了实时通信的各个方面，包括音频、视频和数据通道。WebRTC涉及的主要协议和技术包括：
 
-Used to find the best way to route media.
-Uses STUN (Session Traversal Utilities for NAT) and TURN (Traversal Using Relays around NAT) servers to resolve NAT/firewall issues and establish a connection between peers.
-SDP (Session Description Protocol):
+ICE (交互式连接建立):
 
-Describes multimedia sessions. It doesn't transport any media by itself, but is used in the signaling process to agree on the type of media, formats, codecs, etc.
-Signaling:
+用于寻找路由媒体的最佳方法。
+使用STUN（NAT会话遍历工具）和TURN（使用NAT中继遍历）服务器解决NAT/防火墙问题，并在对等体之间建立连接。
+SDP (会话描述协议):
 
-Not specifically defined by WebRTC; applications can use any protocol.
-The process where peers exchange metadata to coordinate communication. This includes exchanging SDP offers/answers, ICE candidates, etc.
-Many WebRTC apps use protocols like SIP (Session Initiation Protocol) or simple WebSocket-based signaling.
-SRTP (Secure Real-time Transport Protocol):
+描述多媒体会话。它本身不传输任何媒体，但在信令过程中用于达成关于媒体类型、格式、编解码器等的协议。
+信令:
 
-Used to transport audio and video securely.
-Ensures that the media streams are encrypted and authenticated.
-DTLS (Datagram Transport Layer Security):
+WebRTC没有具体定义；应用程序可以使用任何协议。
+对等体交换元数据以协调通信的过程。这包括交换SDP提供/答案、ICE候选人等。
+许多WebRTC应用程序使用如SIP（会话初始协议）或简单的WebSocket基信令协议。
+SRTP (安全实时传输协议):
 
-Used to secure the connection and validate the integrity and origin of data.
-Ensures that the connection between peers is secure, and the data exchanged is authentic.
-RTP (Real-time Transport Protocol):
+用于安全地传输音频和视频。
+确保媒体流被加密和认证。
+DTLS (数据报传输层安全):
 
-Used for transporting real-time media like audio and video.
-RTCP (Real-Time Control Protocol):
+用于保护连接并验证数据的完整性和来源。
+确保对等体之间的连接是安全的，且交换的数据是真实的。
+RTP (实时传输协议):
 
-Works alongside RTP.
-Provides out-of-band control information for an RTP flow. This includes feedback about QoS, jitter, latency, etc.
-SCTP (Stream Control Transmission Protocol):
+用于传输实时媒体，如音频和视频。
+RTCP (实时控制协议):
 
-Transport protocol used by data channels for sending arbitrary data between peers.
-Data Channels:
+与RTP一起工作。
+为RTP流提供带外控制信息。这包括关于QoS、抖动、延迟等的反馈。
+SCTP (流控传输协议):
 
-Allow bidirectional communication of any type of data. This is built on top of SCTP and is part of the WebRTC specification.
-TURN (Traversal Using Relays around NAT):
+数据通道用于在对等体之间发送任意数据的传输协议。
+数据通道:
 
-When direct peer-to-peer communication is blocked due to NAT or firewall constraints, TURN servers can be used to relay the traffic.
-STUN (Session Traversal Utilities for NAT):
+允许双向通信任何类型的数据。这是建立在SCTP之上的，并且是WebRTC规范的一部分。
+TURN (使用NAT中继遍历):
 
-Used to discover the public IP address of the client when behind a NAT.
+当由于NAT或防火墙约束而阻止直接的对等通信时，可以使用TURN服务器来中继流量。
+STUN (NAT会话遍历工具):
+
+用于发现客户端在NAT后的公共IP地址。
